@@ -1,6 +1,8 @@
-#Country-Values aggregation - Spark Exercise:
+Country-Values aggregation - Spark Exercise:
+==
 
-###Question
+Question
+--
 
 Write an application using Python, Scala or Java that will use Spark to do the following:
 1. Read the data file ‘data.csv’.
@@ -9,7 +11,8 @@ Write an application using Python, Scala or Java that will use Spark to do the f
 4. Aggregate the values by country
 5. Write the results to a parquet file
 
-###Input:
+Input:
+--
 
 | Country  | Values         |
 |----------|----------------|
@@ -29,7 +32,8 @@ Write an application using Python, Scala or Java that will use Spark to do the f
 | India    | 70;83;38;27;16 |
 | India    | 86;21;19;59;4  |
 
-###Expected Output:
+Expected Output:
+--
 
 | Country  | Values              |
 |----------|---------------------|
