@@ -10,10 +10,7 @@ public class CountryValues extends App{
   
   	val n = ds.select(size('Values)).first.getAs[Int](0)
 	val summed = ds.groupBy("Country").agg(array((0 until n).map(i => sum(col("Values").getItem(i))) :_* ) as "Values")
-
-	var mapsFinal = Map[String, String]()
-	summed.foreach(a => (mapsFinal += (a._1 -> a._2.mkString(";"))))
-	val result =  mapsFinal.toSeq.toDF("Country", "Values")
+	val result = summed.map(a => (a.getString(0), a.getSeq(1).toArray.mkString(";"))).toDF("Country","Values")
 	
   	result.write.format("parquet").save("Result.parquet")
 }
