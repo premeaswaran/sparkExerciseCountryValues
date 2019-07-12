@@ -42,21 +42,3 @@ Expected Output:
 | England  | 178;114;175;173;153 |
 | Germany  | 144;166;151;172;70  |
 | India    | 246;153;148;100;90  |
-
-Steps Followed for the solution:
---
-1. Extending the CountryValues class to App to use the 'main' of App Trait
-2. Read the data.csv file as a dataframe
-3. Write the dataframe as a parquet file
-4. Read the parquet file and create a new dataframe
-5. Convert the dataframe into an Array[Object]
-6. Convert the array of object into String and separate out 'country' column as key
-7. Convert the array of object into String and separate out 'values' column as value String
-8. Split the value string at ';' and create an Array[Int] out of it
-9. Create an empty map
-10. Loop through the key and map the key-value pair as a map
-11. If the key exists in the 'maps' already, add the value array
-12. If the key does not exist in the 'maps' already, add the key and value to 'maps'
-13. Convert the Array[Int] value of each key to a string separated by ';'
-14. Convert the result of the mapping into a dataframe with two columns 'Country' and 'Values'
-15. Write the dataframe into a Results.parquet file
